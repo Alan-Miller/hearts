@@ -1,0 +1,28 @@
+$redsuit:rgba(243, 83, 132, 1.00);
+$blacksuit: rgb(9, 31, 50);
+
+.App {
+  text-align: center;
+  background-color: rgb(44, 130, 90);
+  height: 100vh;
+  // overflow: hidden;
+}
+
+.sidebar {
+  background-color: #333;
+  height: 100vh;
+  width: 200px;
+  padding: 20px;
+  color: white;
+}
+
+.table {
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
