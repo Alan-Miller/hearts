@@ -41,16 +41,20 @@ class App extends Component {
   }
 
   deal(deck) {
-    const { playerOneHand, playerTwoHand, playerThreeHand, playerFourHand } = this.state;
+    let { playerOneHand, playerTwoHand, playerThreeHand, playerFourHand } = this.state;
+    let hands = [playerOneHand, playerTwoHand, playerThreeHand, playerFourHand];
     while (deck.length) {
       const round = deck.splice(0, 4);
-      playerOneHand.push(round[0]);
-      playerTwoHand.push(round[1]);
-      playerThreeHand.push(round[2]);
-      playerFourHand.push(round[3]);
-      this.setState({ playerOneHand, playerTwoHand, playerThreeHand, playerFourHand });
+      hands.forEach((hand, i) => { hand.push(round[i]); })
     }
-    console.log('hands', playerOneHand, playerTwoHand, playerThreeHand, playerFourHand);
+    hands.forEach(hand => { hand = this.arrange(hand); });
+    this.setState({ playerOneHand, playerTwoHand, playerThreeHand, playerFourHand });
+  }
+
+  arrange(hand) {
+    return hand.sort((a, b) => {
+      return a.id - b.id;
+    });
   }
 
   render() {
