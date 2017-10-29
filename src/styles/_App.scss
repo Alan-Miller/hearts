@@ -1,4 +1,4 @@
-$redsuit:rgba(243, 83, 132, 1.00);
+$redsuit:rgb(243, 83, 132);
 $blacksuit: rgb(9, 31, 50);
 
 @mixin flexBox($d:row, $j:center, $a:center) {
@@ -71,11 +71,12 @@ $blacksuit: rgb(9, 31, 50);
 .card {
   background-color: blue;
   display: inline-flex;
-  margin: 0 5px;
+  margin: 5px;
+  padding: 12px 5px;
 }
 
 .one .hand {
-  transform: rotate(90deg);
+  // transform: rotate(90deg);
 }
 
 .centerOfTable { 

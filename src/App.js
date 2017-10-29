@@ -55,6 +55,9 @@ class App extends Component {
 
   render() {
     const { playerOneHand, playerTwoHand, playerThreeHand, playerFourHand } = this.state;
+    const cardStyle = suit => suit === '♣' || suit === '♠' ? 
+          {backgroundColor: 'rgb(15, 40, 60)', color: 'white'} 
+          : {backgroundColor: 'rgb(243, 83, 132)'};
     return (
       <div className="App">
         <div className="sidebar"></div>
@@ -63,32 +66,48 @@ class App extends Component {
           <div className="player one computer">
             <div className="hand">
               { playerOneHand.map((card, i) => (
-                <div className="card" key={i}>{card.value}{card.suit}</div>
+                <div 
+                  key={i} 
+                  className="card" 
+                  style={cardStyle(card.suit)}
+                  >{card.value}{card.suit}</div>
               )) }
             </div>
           </div>
           <div className="player two computer">
             <div className="hand">
               { playerTwoHand.map((card, i) => (
-                <div className="card" key={i}>{card.value}{card.suit}</div>
+                <div 
+                  key={i} 
+                  className="card" 
+                  style={cardStyle(card.suit)}
+                  >{card.value}{card.suit}</div>
               )) }
             </div>
           </div>
           <div className="player three computer">
             <div className="hand">
               { playerThreeHand.map((card, i) => (
-                <div className="card" key={i}>{card.value}{card.suit}</div>
+                <div 
+                  key={i} 
+                  className="card" 
+                  style={cardStyle(card.suit)}
+                  >{card.value}{card.suit}</div>
               )) }
             </div>
           </div>
           <div className="player four human">
             <div className="hand">
               { playerFourHand.map((card, i) => (
-                <div className="card" key={i}>{card.value}{card.suit}</div>
+                <div 
+                  key={i} 
+                  className="card" 
+                  style={cardStyle(card.suit)}
+                  >{card.value}{card.suit}</div>
               )) }
             </div>
           </div>
-          
+
           <div className="centerOfTable">
             <div className="discard"></div>
           </div>
